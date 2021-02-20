@@ -54,7 +54,7 @@ export const SerieList = ({ calcularCantidad }) => {
     description: "",
     year: "",
     genres: [],
-    country: "Afganistán",
+    country: "default",
   };
 
   const initialSeason = {
@@ -522,6 +522,7 @@ export const SerieList = ({ calcularCantidad }) => {
     } else {
       try {
         await serieService.newSerie(serie);
+        getListSeries();
         setSerie(initialValue);
         setMessage(initialValueMessage);
         calcularCantidad();
@@ -777,6 +778,9 @@ export const SerieList = ({ calcularCantidad }) => {
                                     value={serie.country}
                                     onChange={handleSelectChange}
                                   >
+                                    <option value="default" disabled={true}>
+                                      [SELECCIONE UNA OPCIÓN]
+                                    </option>
                                     {countrys.map((country) => (
                                       <CountryItem
                                         key={country._id}

@@ -52,7 +52,7 @@ export const VideoList = ({ calcularCantidad }) => {
     duration: "",
     year: "",
     genres: [],
-    country: "Afganistán",
+    country: "default",
     typeVideo: "Pelicula",
     web: "www13.pelisplus.movie",
     server: "Peliscloud",
@@ -606,6 +606,9 @@ export const VideoList = ({ calcularCantidad }) => {
                                     value={video.country}
                                     onChange={handleSelectChange}
                                   >
+                                    <option value="default" disabled={true}>
+                                      [SELECCIONE UNA OPCIÓN]
+                                    </option>
                                     {countrys.map((country) => (
                                       <CountryItem
                                         key={country._id}
