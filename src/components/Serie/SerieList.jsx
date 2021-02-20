@@ -384,6 +384,7 @@ export const SerieList = ({ calcularCantidad }) => {
           server: "Peliscloud",
         });
         getListChapters(chapter.season);
+        setEncontrado(false);
         setMessage({
           success: true,
           title: "ÉXITO",
